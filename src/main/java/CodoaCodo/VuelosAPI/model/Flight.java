@@ -15,6 +15,7 @@ import jakarta.persistence.Id;
 
 @Entity //Le indica a hibernate que haga una tabla a partir de esta clase
 public class Flight {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -46,6 +47,14 @@ public class Flight {
 
     public Long getId() {
         return id;
+    }
+
+    public String getOrigen() {
+        return origen;
+    }
+
+    public double getPrecio() {
+        return precio;
     }
 }
 

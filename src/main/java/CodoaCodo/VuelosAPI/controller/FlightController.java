@@ -40,6 +40,11 @@ public class FlightController {
         return flightService.searchFlightById(id);
     }
 
+    @GetMapping("/origen")
+    public List<Flight> getFlightsByOrigen(@RequestParam String origen){
+        return flightService.getByOrigen(origen);
+    }
+
     @PutMapping ("/update")
     public Flight updateFlight(@RequestBody Flight flight){
         return flightService.updateFlight(flight);

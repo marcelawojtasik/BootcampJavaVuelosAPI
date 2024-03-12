@@ -5,6 +5,7 @@ import CodoaCodo.VuelosAPI.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service //le indico que tipo de clase es
@@ -28,6 +29,11 @@ public class FlightService {
     public List<Flight> getAllFlights() {
         return flightRepository.findAll();
     }
+
+    public List<Flight> getByOrigen(String origen){
+        return flightRepository.findByOrigen(origen);
+    }
+
 
     public Flight searchFlightById(Long id) {
         return flightRepository.findById(id).orElse(null);
